@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    stages("different statge "){
+        stage("Build"){
+            steps{
+                echo "Building code using jenkins"
+            }
+            
+        }
+        
+        stage("Testing"){
+            steps{
+                echo "Testing code"
+            }
+            
+        }
+        
+        stage("Deploy"){
+            steps{
+                echo "Deploying code"
+            }
+        }
+    }
+}
