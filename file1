@@ -2,10 +2,10 @@ pipeline{
     agent any
     stages("different statge "){
     
-    stage("connecting with GITHUB"){
-    steps{
-    git branch: 'main', url: 'https://github.com/zafar-khan123/declarative-pipeline.git'
-    }
+    //stage("connecting with GITHUB"){
+    //steps{
+   // //git branch: 'main', url: 'https://github.com/zafar-khan123/declarative-pipeline.git'
+   // }
     
     }
         stage("Build"){
