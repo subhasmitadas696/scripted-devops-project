@@ -1,13 +1,7 @@
 pipeline{
     agent any
     stages("different statge "){
-    
-      stage("connecting with GITHUB"){
-    steps{
-   git branch: 'main', credentialsId: 'anyid', url: 'git@github.com:zafar-khan123/file1.git'
-   }
-    
-    }
+
         stage("Build"){
             steps{
                 echo "Building code using jenkins"
