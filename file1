@@ -4,7 +4,7 @@ pipeline{
     
       stage("connecting with GITHUB"){
     steps{
-   git credentialsId: 'anyid', url: 'git@github.com:zafar-khan123/file1.git'
+   git branch: 'main', credentialsId: 'anyid', url: 'git@github.com:zafar-khan123/file1.git'
    }
     
     }
