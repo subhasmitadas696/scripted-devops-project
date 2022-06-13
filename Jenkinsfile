@@ -29,10 +29,11 @@ pipeline {
         }
         
         stage('Container deployment in Docker-HOST -remotehost'){
+            def dockerrm = 'docker container rm -f cloudknowledge'
+            def dockerimagerm = 'docker image rmi zk0034630/pipeline-demo'
+            def dockerrun = 'docker run -p 8000:80 -d --name cloudknowledge zk0034630/pipeline-demo:latest'
+            
             steps{
-                def dockerrm = 'docker container rm -f cloudknowledge'
-                def dockerimagerm = 'docker image rmi zk0034630/pipeline-demo'
-                def dockerrun = 'docker run -p 8000:80 -d --name cloudknowledge zk0034630/pipeline-demo:latest'
                 sshagent(['dockerhostid']) {
                 // some block
                 sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.40.237 ${dockerrun}"
