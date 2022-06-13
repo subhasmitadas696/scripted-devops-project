@@ -28,7 +28,7 @@ pipeline {
             }
         }
         
-        stage('Container deployment in Docker-HOST -remotehost'){
+        stage('Container deployment in Docker-HOST'){
             // def dockerrm = 'docker container rm -f cloudknowledge'
             // def dockerimagerm = 'docker image rmi zk0034630/pipeline-demo'
             def dockerrun = 'docker run -p 8000:80 -d --name cloudknowledge zk0034630/pipeline-demo:latest'
