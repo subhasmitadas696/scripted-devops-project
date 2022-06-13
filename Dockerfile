@@ -1,7 +1,7 @@
 FROM centos:latest
 MAINTAINER Zafar Khan
-RUN yum install -y httpd\
-	zip\
+RUN yum install -y httpd \
+	zip \
 	unzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page258/luxory.zip /var/www/html/
 WORKDIR /var/www/html
