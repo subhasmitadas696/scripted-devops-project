@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:7
 MAINTAINER Zafar Khan
 RUN yum install -y httpd 
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page258/luxory.zip /var/www/html/
