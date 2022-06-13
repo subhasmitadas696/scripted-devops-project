@@ -18,7 +18,7 @@ pipeline {
         
         stage('Push docker image into DockerHUB'){
             steps{
-                withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhubpassword')]) {
+                withCredentials([string(credentialsId: 'dockerhubpassword1', variable: 'dockerhubpassword')]) {
                 // some block
                 sh 'docker login -u zk0034630 -p ${dockerhubpassword}'
                 sh 'docker image push zk0034630/$JOB_NAME:v1.$BUILD_ID'
