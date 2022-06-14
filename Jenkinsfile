@@ -31,7 +31,8 @@ pipeline {
         stage('Deployment on Docker-HOST'){
             steps{
               sshagent(['docremhost']) {
-              sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.34.207 docker rm -f cloudknowledge'   
+              sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.34.207 docker rm -f cloudknowledge'
+              sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.34.207 docker image rmi zk0034630/pipeline-project'
               sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.34.207 docker run -p 8080:8080 -td --name cloudknowledge zk0034630/pipeline-project:latest'
               }
             
