@@ -33,14 +33,14 @@ pipeline {
             // def dockerimagerm = 'docker image rmi zk0034630/pipeline-demo'
             
             
-            steps{
+            //steps{
                 //def dockerrun = 'docker container -p 8000:80 run -itd --name cloudknowledge zk0034630/pipeline-demo'
-                sshagent(['dockerhostid']) {
+                //sshagent(['dockerhostid']) {
                 // some block
-                sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.40.237 docker run -d --name cloudknowledge -p 8000:80 zk0034630/pipeline-demo:latest'
-                }
+              //  sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.40.237 docker run -d --name cloudknowledge -p 8000:80 zk0034630/pipeline-demo:latest'
+               // }
             
-            }
+           // }
         }
     }
 }
