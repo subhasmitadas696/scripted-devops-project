@@ -1,4 +1,4 @@
 FROM centos:7
-MAINTAINER Zafar Khan
-RUN echo "Hello Zafar Khan"
+MAINTAINER Zafar Khan 
+CMD echo "Hello Zafar Khan"
 
