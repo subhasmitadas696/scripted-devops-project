@@ -1,6 +1,5 @@
 FROM centos:7
 RUN yum -y update
-RUN yum install -y java
 RUN yum install -y httpd
 WORKDIR /var/www/html
 ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.63/bin/apache-tomcat-9.0.63.tar.gz /var/www/html
