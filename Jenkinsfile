@@ -32,7 +32,7 @@ pipeline {
             steps{
               sshagent(['docremhost']) {
               sh 'docker container rm cloudknowledge'    
-              sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.34.207 docker run -p 80:80 -itd --name cloudknowledge zk0034630/pipeline-project:latest'
+              sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.34.207 docker run -p 80:80 -it --name cloudknowledge zk0034630/pipeline-project:latest'
               }
             
             }
