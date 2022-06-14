@@ -31,10 +31,9 @@ pipeline {
         stage('Deployment on Docker-HOST'){
             
             steps{
-                
+                def dockerRun = 'docker run -p 80:80 -d --name cloudknowledge zk0034630/pipeline-project:latest'
               sshagent(['dochost']) {
-              // some block
-                  sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.34.207 docker run -p 8000:80 -d --name cloudknowledge zk0034630/pipeline-project:latest'
+              sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.34.207 ${dockerRun}"
               }
             
             }
